@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'sterlet'
+require 'pry'
+
+# rubocop:disable Lint/UselessAssignment
+client = Sterlet::Client.new(ENV['STERLET_API_KEY'])
+raw_client = Sterlet::RawClient.new(ENV['STERLET_API_KEY'])
+# rubocop:enable Lint/UselessAssignment
+
+Pry.start

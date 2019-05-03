@@ -1,0 +1,15 @@
+{
+  "dirs": [
+    "en-fr",
+    "en-ru",
+    "fr-en",
+    "fr-ru",
+    "ru-en",
+    "ru-fr"
+  ],
+  "langs": {
+    "en": "English",
+    "fr": "French",
+    "ru": "Russian"
+  }
+}
