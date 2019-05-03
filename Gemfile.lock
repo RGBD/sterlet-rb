@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sterlet (0.1.0)
+    sterlet (0.1.1)
       http (~> 4.1)
 
 GEM

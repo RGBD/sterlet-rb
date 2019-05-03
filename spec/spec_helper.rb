@@ -10,11 +10,12 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    stub_config = {
-      'getLangs' => 'get_langs_en',
-      'detect' => 'detect_en',
-      'translate' => 'translate_london_en_ru',
-    }
+    stub_config = [
+      %w[getLangs get_langs_en],
+      %w[detect detect_en],
+      %w[detect detect_unknown],
+      %w[translate translate_london_en_ru],
+    ]
     stub_config.each do |endpoint, fixture|
       stub_request(:post, %r{#{Sterlet::API_URI_BASE}/#{endpoint}})
         .with(body: read_fixture("request_#{fixture}"))

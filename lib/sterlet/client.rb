@@ -6,7 +6,7 @@ module Sterlet
 
     def detect(text, hints: [])
       response = @raw_client.detect(text, hints: hints)
-      response['lang'].to_sym
+      response['lang'].to_s.empty? ? nil : response['lang'].to_sym
     end
 
     def translate(text, to:, from: nil, format: :plain)

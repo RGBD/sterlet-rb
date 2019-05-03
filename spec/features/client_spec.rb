@@ -5,7 +5,7 @@ RSpec.describe 'Client' do
     Sterlet::Client.new('invalid_key')
   end
 
-  it 'dirs' do
+  it '#dirs' do
     response = client.dirs
 
     expected_response = [
@@ -19,7 +19,7 @@ RSpec.describe 'Client' do
     expect(response).to eq(expected_response)
   end
 
-  it 'langs' do
+  it '#langs' do
     response = client.langs
 
     expected_response = {
@@ -30,13 +30,19 @@ RSpec.describe 'Client' do
     expect(response).to eq(expected_response)
   end
 
-  it 'detect' do
+  it '#detect' do
     response = client.detect('london is a capital of great britain')
 
     expect(response).to eq(:en)
   end
 
-  it 'translate' do
+  it '#detect unknown' do
+    response = client.detect('42')
+
+    expect(response).to be_nil
+  end
+
+  it '#translate' do
     response = client.translate('london is a capital of great britain', from: 'en', to: 'ru')
 
     expect(response).to eq('Лондон-столица Великобритании')
